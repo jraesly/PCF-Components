@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="PowerCAT" constructor="Icon" version="0.0.1" display-name-key="Icon" description-key="Icon_Desc" control-type="virtual" >
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+    <property name="IconName" display-name-key="IconName" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="IconType" display-name-key="IconType" of-type="Enum" usage="input" required="true" default-value="0">
+      <value name="IconButon" display-name-key="IconTypeIconButton">0</value>
+      <value name="ActionButton" display-name-key="IconTypeActionButton">1</value>
+      <value name="Icon" display-name-key="IconTypeIcon">2</value>
+    </property>
+    <property name="Text" display-name-key="Text" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="TextAlignment" display-name-key="TextAlignment" of-type="Enum" usage="input" required="true" default-value="1">
+      <value name="Center" display-name-key="Center">0</value>
+      <value name="Left" display-name-key="Left">1</value>
+      <value name="Right" display-name-key="Right">2</value>
+    </property>
+    <property name="IconColor" display-name-key="IconColor" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="HoverIconColor" display-name-key="HoverIconColor" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="IconSize" display-name-key="IconSize" of-type="Whole.None" usage="input" required="false" />
+    <property name="FontSize" display-name-key="FontSize" of-type="Whole.None" usage="input" required="false" />
+    <property name="FontColor" display-name-key="FontColor" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="HoverFontColor" display-name-key="HoverFontColor" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="FillColor" display-name-key="FillColor" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="HoverFillColor" display-name-key="HoverFillColor" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="BorderColor" display-name-key="BorderColor" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="HoverBorderColor" display-name-key="HoverBorderColor" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="BorderRadius" display-name-key="BorderRadius" of-type="Whole.None" usage="input" required="false" />
+    <property name="Theme" display-name-key="Theme" of-type="Multiple" usage="input" required="false" />
+    <property name="AccessibilityLabel" display-name-key="AccessibilityLabel" description-key="AccessibilityLabel_Desc" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="OutputEvent" display-name-key="OutputEvent" usage="output" of-type="SingleLine.Text" />
+    <property name="BadgeText" display-name-key="BadgeText" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="BadgeSize" display-name-key="Badge Size" description-key="The size of the badge count text" of-type="Whole.None" usage="input" required="false" />
+    <property name="BadgeWeight" display-name-key="Badge Weight" description-key="The font weight of the badge count text" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="BadgeColor" display-name-key="Badge Color" description-key="The color of the badge count text" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="BadgeBackgroundColor" display-name-key="Badge Background Color" description-key="The background color of the badge count" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="BadgeBorderColor" display-name-key="Badge Border Color" description-key="The border color of the badge count" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="BadgeBorderRadius" display-name-key="Badge Border Radius" description-key="The border radius of the badge count" of-type="Whole.None" usage="input" required="false" />
+    <property name="BadgePosition" display-name-key="Badge Position" description-key="The position of the badge count" of-type="Enum" usage="input" required="false" default-value="0">
+      <value name="TopRight" display-name-key="Top Right">0</value>
+      <value name="TopLeft" display-name-key="Top Left">1</value>
+      <value name="BottomRight" display-name-key="Bottom Right">2</value>
+      <value name="BottomLeft" display-name-key="Bottom Left">3</value>
+    </property>
+    <property name="BadgeAlignment" display-name-key="Badge Alignment" description-key="The alignment of the badge count" of-type="Enum" usage="input" required="false" default-value="0">
+      <value name="Center" display-name-key="Center">0</value>
+      <value name="Left" display-name-key="Left">1</value>
+      <value name="Right" display-name-key="Right">2</value>
+    </property>
+    <property name="BadgeOffsetX" display-name-key="Badge Offset X" description-key="The horizontal offset of the badge count" of-type="Whole.None" usage="input" required="false" />
+    <property name="BadgeOffsetY" display-name-key="Badge Offset Y" description-key="The vertical offset of the badge count" of-type="Whole.None" usage="input" required="false" />
+     <!-- InputEvent : SetFocus -->
+    <property name="InputEvent" display-name-key="InputEvent" of-type="SingleLine.Text" usage="input" />
+    
+    <resources>
+      <code path="index.ts" order="1"/>
+      <resx path="strings/Icon.1033.resx" version="1.0.0" />
+      <platform-library name="React" version="16.8.6" />
+      <platform-library name="Fluent" version="8.29.0" />
+      <css path="css/Badge.css"
+      order="1" />
+    </resources>
+  </control>
+</manifest>

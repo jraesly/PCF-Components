@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <control namespace="MscrmTools" constructor="SimpleNotification" version="0.0.9" display-name-key="SimpleNotification" description-key="SimpleNotification_Desc" control-type="standard" preview-image="imgs/reactnotification.png">
+    <property name="fakeAttribute" display-name-key="fakeAttribute_Display_Key" description-key="fakeAttribute_Desc" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="messageType" display-name-key="messageType_Display_Key" description-key="messageType_Desc" of-type="Enum" usage="input" required="true">
+      <value name="Info" display-name-key="Info_Key" description-key="Info_Desc">Info</value>
+      <value name="Warning" display-name-key="Warning_Key" description-key="Warning_Desc">Warning</value>
+      <value name="Error" display-name-key="Error_Key" description-key="Error_Desc">Error</value>
+      <value name="Success" display-name-key="Success_Key" description-key="Success_Desc" default="true">Success</value>
+    </property>
+    <property name="messageTitle" display-name-key="messageTitle_Display_Key" description-key="messageTitle_Desc_Key" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="message" display-name-key="message_Display_Key" description-key="message_Desc_Key" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="showLink" display-name-key="showLink_Display_Key" description-key="showLink_Desc_Key" of-type="Enum" usage="input" required="true">
+      <value name="Yes" display-name-key="Yes_Key" description-key="Yes_Desc">Yes</value>
+      <value name="No" display-name-key="No_Key" description-key="No_Desc" default="true">No</value>
+    </property>
+    <property name="linkText" display-name-key="linkText_Display_Key" description-key="linkText_Desc_Key" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="link" display-name-key="link_Display_Key" description-key="link_Desc_Key" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="timeout (ms)" display-name-key="timeout_Display_Key" description-key="timeout_Desc_Key" of-type="Whole.None" usage="input" required="true" />
+    <property name="open" display-name-key="open" description-key="open" of-type="TwoOptions" usage="input" required="false" />
+    <property name="verticalPosition" display-name-key="verticalPosition_Display_Key" description-key="verticalPosition_Desc_Key" of-type="Enum" usage="input" required="true">
+      <value name="top" display-name-key="Top_Key" description-key="Top_Desc">Top</value>
+      <value name="bottom" display-name-key="Bottom_Key" description-key="Bottom_Desc" default="true">Bottom</value>
+    </property>
+    <property name="horizontalPosition" display-name-key="horizontalPosition_Display_Key" description-key="horizontalPosition_Desc_Key" of-type="Enum" usage="input" required="true">
+      <value name="left" display-name-key="Left_Key" description-key="Left_Desc">Left</value>
+      <value name="center" display-name-key="Center_Key" description-key="Center_Desc">Center</value>
+      <value name="right" display-name-key="Right_Key" description-key="Right_Desc" default="true">Right</value>
+    </property>
+    <resources>
+      <code path="index.ts" order="1" />
+    </resources>
+  </control>
+</manifest>
