@@ -26,6 +26,7 @@
       <value name="center" display-name-key="Center_Key" description-key="Center_Desc">Center</value>
       <value name="right" display-name-key="Right_Key" description-key="Right_Desc" default="true">Right</value>
     </property>
+    <property name="Theme" display-name-key="Theme" of-type="Multiple" usage="input" required="false" />
     <resources>
       <code path="index.ts" order="1" />
     </resources>

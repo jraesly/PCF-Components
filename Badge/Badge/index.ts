@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { ContextEx } from '../ContextExtended';
 import { IInputs, IOutputs } from './generated/ManifestTypes';
-import { IconComponent, IconComponentProps } from './BadgeComponent';
+import { BadgeComponent, BadgeComponentProps } from './BadgeComponent';
 import { InputEvents, RenderTypes, TextAlignmentTypes } from './ManifestTypes';
 
-export class Icon implements ComponentFramework.ReactControl<IInputs, IOutputs> {
+export class Badge implements ComponentFramework.ReactControl<IInputs, IOutputs> {
     private container: HTMLDivElement;
     private outputEvent = '';
     private focusKey = '';
@@ -35,7 +35,7 @@ export class Icon implements ComponentFramework.ReactControl<IInputs, IOutputs> 
             // Simulate SetFocus until this is unlocked by the platform
             this.focusKey = inputEvent;
         }
-        return React.createElement<IconComponentProps>(IconComponent, {
+        return React.createElement<BadgeComponentProps>(BadgeComponent, {
             tabIndex: tabIndex,
             width: allocatedWidth,
             height: allocatedHeight,

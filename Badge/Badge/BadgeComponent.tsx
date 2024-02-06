@@ -15,7 +15,7 @@ import {
 } from '@fluentui/react';
 import { useAsync } from '@fluentui/react-hooks';
 
-export interface IconComponentProps {
+export interface BadgeComponentProps {
     width?: number;
     height?: number;
     iconName?: string;
@@ -59,7 +59,7 @@ export enum IconRenderType {
     Icon = 2,
 }
 
-export const IconComponent = React.memo((props: IconComponentProps) => {
+export const BadgeComponent = React.memo((props: BadgeComponentProps) => {
     const { text, tooltipContent, disabled, onSelected, tabIndex, ariaLabel, setFocus, themeJSON, renderType } = props;
     const theme = React.useMemo(() => {
         try {
@@ -106,7 +106,6 @@ export const IconComponent = React.memo((props: IconComponentProps) => {
                                     position: 'absolute',
                                     transform: `translate(${props.badgeOffsetX || 0}px, ${props.badgeOffsetY || 0}px)`, // Apply the offsets
                                     backgroundSize: 'contain',
-                                    
                                     // Set defaults for top and right, and then override based on badgePosition
                                     /*                            top: props.badgePosition === 'BottomLeft' || props.badgePosition === 'BottomRight' ? 'auto' : '0',
                                         bottom: props.badgePosition === 'BottomLeft' || props.badgePosition === 'BottomRight' ? '0' : 'auto',
@@ -161,14 +160,14 @@ export const IconComponent = React.memo((props: IconComponentProps) => {
     );
 });
 
-IconComponent.displayName = 'IconComponent';
+BadgeComponent.displayName = 'IconComponent';
 
 function getRenderTag(type?: IconRenderType) {
     if (type === IconRenderType.IconButon) return IconButton;
     else return ActionButton;
 }
 
-function getIconProps(props: Partial<IconComponentProps>) {
+function getIconProps(props: Partial<BadgeComponentProps>) {
     return {
         iconName: props.iconName,
         styles: {
@@ -179,7 +178,7 @@ function getIconProps(props: Partial<IconComponentProps>) {
         },
     } as IIconProps;
 }
-function getIconContainerStyle(props: Partial<IconComponentProps>) {
+function getIconContainerStyle(props: Partial<BadgeComponentProps>) {
     // Vertical center font icon
     return mergeStyles({
         height: props.height,
@@ -188,7 +187,7 @@ function getIconContainerStyle(props: Partial<IconComponentProps>) {
     });
 }
 
-function getIconClass(props: IconComponentProps) {
+function getIconClass(props: BadgeComponentProps) {
     return mergeStyles({
         fontSize: props.iconSize ?? props.fontSize,
         width: props.width,
@@ -198,7 +197,7 @@ function getIconClass(props: IconComponentProps) {
     });
 }
 
-function getButtonStyles(props: IconComponentProps) {
+function getButtonStyles(props: BadgeComponentProps) {
     const styles = {
         root: {
             width: props.width,

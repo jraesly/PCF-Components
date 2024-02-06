@@ -40,6 +40,7 @@ export class Alert implements ComponentFramework.StandardControl<IInputs, IOutpu
             open : context.parameters.open.raw,
             vertical: context.parameters.verticalPosition.raw,
             horizontal: context.parameters.horizontalPosition.raw,
+            themeJSON: undefinedIfEmpty(context.parameters.Theme),
 		};
 	    ReactDOM.render(React.createElement(AlertControl, props), this._container);
 	}
@@ -70,4 +71,19 @@ export class Alert implements ComponentFramework.StandardControl<IInputs, IOutpu
 	{
 		ReactDOM.unmountComponentAtNode(this._container);
 	}
+}
+function undefinedIfEmpty(property: ComponentFramework.PropertyTypes.Property) {
+    return defaultIfEmpty(property, undefined);
+}
+
+function defaultIfEmpty<T>(property: ComponentFramework.PropertyTypes.Property, defaultValue: T) {
+    return (property.raw as T) ? property.raw : defaultValue;
+}
+
+function undefinedIfZero(property: ComponentFramework.PropertyTypes.Property) {
+    return property.raw && property.raw > 0 ? property.raw : undefined;
+}
+function valueOrUndefined(property: ComponentFramework.PropertyTypes.Property) {
+    // Check for null or undefined, but allow 0 and negative values
+    return property.raw !== null && property.raw !== undefined ? property.raw : undefined;
 }
