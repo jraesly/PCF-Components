@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 
-export class SimpleNotification implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class Alert implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
 	private _container:HTMLDivElement;
 
